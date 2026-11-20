@@ -47,3 +47,10 @@ emits U+FFFD. Neither case raises; the caller decides how to react.
 - `Decoder()` — incremental decoder with `feed(data) -> str` and `flush() -> str`.
 - `decode(data: bytes) -> str` — decode a complete byte string.
 - `decode_chunks(chunks: Iterable[bytes]) -> str` — decode an iterable of chunks.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
