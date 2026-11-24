@@ -1,6 +1,6 @@
 [project]
 name = "iso-2022-jp-decoder"
-version = "0.1.0"
+version = "0.1.1"
 description = "Streaming ISO-2022-JP decoder that handles charset escapes split across chunks."
 requires-python = ">=3.10"
 dependencies = []
